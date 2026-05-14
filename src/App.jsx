@@ -2,7 +2,6 @@ import { useState } from 'react';
 import axios from 'axios';
 
 function App() {
-  // Состояние полей согласно твоей схеме API
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -20,7 +19,6 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Отправляем POST на твой эндпоинт из YAML
       const response = await axios.post('http://127.0.0.1:8000/api/users/application/create/', formData);
       setMessage('Заявка успешно отправлена!');
       console.log('Успех:', response.data);
